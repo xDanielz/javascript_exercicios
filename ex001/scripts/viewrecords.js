@@ -1,5 +1,6 @@
 function viewrecords(){   
     const select_element = document.getElementById('who');
+    select_element.addEventListener('change', viewrecords);
     const tbody_element = document.getElementsByTagName('tbody')[0];
     const chosen = select_element.value;
     tbody_element.innerHTML = '';

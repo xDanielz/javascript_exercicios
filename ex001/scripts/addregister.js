@@ -40,5 +40,5 @@ function addregister(){
         element.value = '';
     }
 
-    
+    element_name.focus();
 }
