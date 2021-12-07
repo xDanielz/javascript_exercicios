@@ -1,14 +1,14 @@
 const registerbtn = document.querySelector('input[type=button]');
-registerbtn.addEventListener('click', addregister);
-
 const element_name = document.getElementById('name');
 const element_date = document.getElementById('date');
 const element_price = document.getElementById('price');
+registerbtn.addEventListener('click', addregister);
 
 var allrecords = {};
 
 function addregister(){
     let proceed = true;
+
     for(id of ['price', 'name', 'date']){
         let element = eval(`element_${id}`)
         if(!element.value){
