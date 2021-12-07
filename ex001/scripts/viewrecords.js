@@ -1,21 +1,25 @@
 function viewrecords(){   
     const select_element = document.getElementById('who');
     const tbody_element = document.getElementsByTagName('tbody')[0];
+    const chosen = select_element.value;
+    tbody_element.innerHTML = '';
 
     //Parte responsável por adicionar as opções ao elemento select
     for(n in allrecords){
-        if(select_element.innerText.indexOf(n) != -1){
-            return;
+        if(select_element.innerText.indexOf(n) == -1){
+            let op = document.createElement('option');
+            op.value = n;
+            op.innerHTML = `<span style=text-transform:"capitalize">${n}<span>`;
+            select_element.appendChild(op);
         }
-        let op = document.createElement('option');
-        op.value = n;
-        op.innerHTML = `<span style=text-transform:"capitalize">${n}<span>`;
-        select_element.appendChild(op);
     }
 
-    //Parte responsável por adicionar o conteudo a tabela
+    //Parte responsável por adicionar o conteúdo a tabela
     for(n in allrecords){
         let n_id = 1;
+        
+        if(chosen != 'all' && chosen != n){continue;}
+
         for(let i = 0; i < allrecords[n].length; i++){
             let tr = document.createElement('tr');
             tbody_element.appendChild(tr);
@@ -31,7 +35,7 @@ function viewrecords(){
 
             let td_price = document.createElement('td');
             td_price.innerText = allrecords[n][i].price
-            
+    
             tr.appendChild(td_id);
             tr.appendChild(td_name);
             tr.appendChild(td_date);
