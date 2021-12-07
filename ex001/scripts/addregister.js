@@ -4,8 +4,7 @@ registerbtn.addEventListener('click', addregister);
 const element_name = document.getElementById('name');
 const element_date = document.getElementById('date');
 const element_price = document.getElementById('price');
-
-const allrecords = {};
+var allrecords = {};
 
 function addregister(){
     let name = element_name.value.toUpperCase();
@@ -19,4 +18,6 @@ function addregister(){
     }
 
     allrecords[name].push(register);
+
+    viewrecords();
 }
