@@ -16,7 +16,7 @@ function viewrecords(){
     //Parte responsável por adicionar o conteudo a tabela
     for(n in allrecords){
         let n_id = 1;
-        for(let i = 0; i < allrecords[n].lenght; i++){
+        for(let i = 0; i < allrecords[n].length; i++){
             let tr = document.createElement('tr');
             tbody_element.appendChild(tr);
 
@@ -35,7 +35,7 @@ function viewrecords(){
             tr.appendChild(td_id);
             tr.appendChild(td_name);
             tr.appendChild(td_date);
-            tr.appendChildt(td_price);
+            tr.appendChild(td_price);
 
             n_id++;
         }
