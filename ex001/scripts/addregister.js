@@ -34,6 +34,7 @@ function addregister(){
     allrecords[name].push(register);
 
     viewrecords();
+    addbuttons();
 
     for(id of ['price', 'name', 'date']){
         let element = eval(`element_${id}`)
