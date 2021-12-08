@@ -41,7 +41,10 @@ function viewrecords(){
                 tr.appendChild(td);
             }
 
+            addbuttons(tr);//Adiciona os botões de deletar e alterar ao elemento tr;
+            
             tbody_element.appendChild(tr);
+
 
             n_id++;
         }
