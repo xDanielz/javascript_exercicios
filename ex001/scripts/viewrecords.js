@@ -26,21 +26,21 @@ function viewrecords(){
 
         for(let i = 0; i < allrecords[n].length; i++){
 
-            let tr = document.createElement('tr');
-            let td_id = document.createElement('td');
-            let td_name = document.createElement('td')
-            let td_date = document.createElement('td');
-            let td_price = document.createElement('td');
-            
-            td_id.innerText = n_id;
-            td_name.innerText = n;
-            td_date.innerText = allrecords[n][i].date
-            td_price.innerText = allrecords[n][i].price
-            
-            tr.appendChild(td_id);
-            tr.appendChild(td_name);
-            tr.appendChild(td_date);
-            tr.appendChild(td_price);
+            let contents = [
+                n_id, 
+                n, 
+                allrecords[n][i].date, 
+                allrecords[n][i].price
+            ]
+
+            tr = document.createElement('tr');
+
+            for(c of contents){
+                let td = document.createElement('td');
+                td.innerText = c;
+                tr.appendChild(td);
+            }
+
             tbody_element.appendChild(tr);
 
             n_id++;
