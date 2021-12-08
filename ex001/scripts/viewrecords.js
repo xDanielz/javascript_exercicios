@@ -1,12 +1,12 @@
 function viewrecords(){   
-    
+
     const select_element = document.getElementById('who');
     select_element.addEventListener('change', viewrecords);
     const tbody_element = document.getElementsByTagName('tbody')[0];
     const chosen = select_element.value;
     tbody_element.innerHTML = '';
 
-    //Parte responsável por adicionar as opções ao elemento select
+    //Adiciona as opções ao elemento select
     for(n in allrecords){
 
         if(select_element.innerText.indexOf(n) == -1){
@@ -17,7 +17,7 @@ function viewrecords(){
         }
     }
 
-    //Parte responsável por adicionar o conteúdo a tabela
+    //Adiciona os elementos <tr> e <td> a tabela
     for(n in allrecords){
 
         let n_id = 1;//Contador do id respectivo ao usuário único
@@ -46,4 +46,22 @@ function viewrecords(){
             n_id++;
         }
     }
+
+    //Calculo do total e quantia de registro
+    const amount_element = document.getElementById('amount');
+    const total_element = document.getElementById('total');
+
+    let total = 0; amount = 0;
+    for(n in allrecords){
+   
+        if(chosen != 'all' && chosen != n){continue;}
+
+        for(let i = 0; i < allrecords[n].length; i++){
+            total += Number(allrecords[n][i].price);
+            amount ++;
+        }
+    }
+
+    total_element.innerText = total;
+    amount_element.innerText = amount;
 }
