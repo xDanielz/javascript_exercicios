@@ -6,7 +6,7 @@ function delregister(){
     let regid = tr_father.children[0].innerText;
     let regname = tr_father.children[1].innerText;
 
-    if(!confirm(`Apagar registro ${regid+' '+regname}?`)){return;}
+    if(!confirm(`Apagar registro ${regid} de ${regname}?`)){return;}
 
     //Removendo o registro
     allrecords[regname].pop(Number(regid)-1);
