@@ -3,6 +3,9 @@ function addbuttons(tr){
     let span_del = document.createElement('span');
     let span_upd = document.createElement('span');
 
+    span_del.setAttribute('class', 'delbutton');
+    span_upd.setAttribute('class', 'updbutton');
+
     span_del.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
     span_upd.innerHTML = '<ion-icon name="settings-outline"></ion-icon>';
 
