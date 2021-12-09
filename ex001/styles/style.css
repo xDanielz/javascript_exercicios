@@ -59,13 +59,15 @@ select{
 }
 
 div#result{
-    width: 300px;
+    width: 500px;
     margin: auto;
 }
 
 table{
+    display: block;
     margin: auto;
     overflow: auto;
+    width: 500px;
     border: 1px rgb(161, 161, 161) solid;
     text-align: center;
     border-collapse: collapse;
@@ -75,8 +77,26 @@ td, th{
     border: 1px rgb(161, 161, 161) solid;
     padding: 3px; 
     height: 30px;
+    width: 500px;
 }
 
+.updbutton, .delbutton{
+    display: inline-block;
+    width: 30px;
+    padding-top: 5px;
+}
+
+.delbutton{
+    border-bottom: 1px rgb(161, 161, 161) solid;;
+}
+
+.updbutton:hover{
+    color: blue;
+}
+
+.delbutton:hover{
+    color: red;
+}
 
 #changeregister{
     position: absolute;
