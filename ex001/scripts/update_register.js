@@ -33,8 +33,17 @@ function updateRecords(){
     let id = document.getElementById('regid').innerText;
     id = Number(id)-1;
     
-    allrecords[name][id].price = new_price.value;
-    allrecords[name][id].date = new_date.value;
+    if(!(new_price.value || new_date.value)){
+        alert('Preencha ao menos um campo.');
+        return;
+    }
+
+    if(!confirm(`Alterar registro ${id+1} de ${name}?`)){return;}
+
+    for(c of ['price', 'date']){
+        if(eval(`new_${c}.value`))
+            eval(`allrecords[name][id].${c} = new_${c}.value;`)
+    }
 
     alert('Registros alterados com sucesso!');
 
