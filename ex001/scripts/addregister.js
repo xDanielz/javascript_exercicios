@@ -8,6 +8,7 @@ var allrecords = {};
 
 function addregister(){
     let proceed = true;
+    let deflt = element_name.style.border;
 
     for(id of ['price', 'name', 'date']){
         let element = eval(`element_${id}`)
@@ -16,7 +17,7 @@ function addregister(){
             element.style.border = '1px solid red';
             continue;
         }
-        element.style.border = '1px solid black';
+        element.style.border = deflt;
     }
 
     if(!proceed){return;}
