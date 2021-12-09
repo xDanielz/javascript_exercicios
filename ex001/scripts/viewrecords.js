@@ -12,7 +12,7 @@ function viewrecords(){
         if(select_element.innerText.indexOf(n) == -1){
             let op = document.createElement('option');
             op.value = n;
-            op.innerHTML = `<span style=text-transform:"capitalize">${n}<span>`;
+            op.innerHTML = n;
             select_element.appendChild(op);
         }
     }
@@ -25,7 +25,6 @@ function viewrecords(){
         if(chosen != 'all' && chosen != n){continue;}
 
         for(let i = 0; i < allrecords[n].length; i++){
-
             let contents = [
                 n_id, 
                 n, 
@@ -42,7 +41,7 @@ function viewrecords(){
             }
 
             addbuttons(tr);//Adiciona os botões de deletar e alterar ao elemento tr;
-            
+
             tbody_element.appendChild(tr);
 
 
