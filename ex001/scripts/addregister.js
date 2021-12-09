@@ -8,19 +8,17 @@ var allrecords = {};
 
 function addregister(){
     let proceed = true;
-    let deflt = element_name.style.border;
-
+    
+    //Verificando se os campos estão vazios
     for(id of ['price', 'name', 'date']){
         let element = eval(`element_${id}`)
         if(!element.value){
             proceed = false;
-            element.style.border = '1px solid red';
-            continue;
+            break;
         }
-        element.style.border = deflt;
     }
 
-    if(!proceed){return;}
+    if(!proceed || element_price.value < 1){return;}
 
     let name = element_name.value.toUpperCase();
     let register = {
