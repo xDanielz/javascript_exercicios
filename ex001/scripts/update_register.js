@@ -2,10 +2,19 @@
 const new_price = document.getElementById('newprice');
 const new_date = document.getElementById('newdate');
 
+//Inputs do formulário de adição de registros
+const element_input = document.getElementById('addreg');
 
 function recordChange(){
     document.getElementById('changeregister').style.display = 'block';
-    document.getElementById('result').style.display = 'none';
+
+    //Desabilitando inputs
+    for(i of element_input.children){
+        if(i == '[object HTMLInputElement]'){
+            i.setAttribute('disabled', 'disabled');
+        }
+    }
+
 
     //Identificadores
     const regid = this.parentElement.children[0].innerText;
@@ -26,6 +35,14 @@ function closeRecordChange(){
 
     new_price.value = '';
     new_date.value = '';
+
+    //Habilitando inputs
+    for(i of element_input.children){
+        if(i == '[object HTMLInputElement]'){
+            i.removeAttribute('disabled');
+        }
+    }
+
 }
 
 function updateRecords(){
@@ -46,7 +63,7 @@ function updateRecords(){
     }
 
     alert('Registros alterados com sucesso!');
-
+    
     viewrecords();
     closeRecordChange();
 }

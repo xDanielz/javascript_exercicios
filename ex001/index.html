@@ -8,82 +8,112 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Registro</h1>
-    </header>
     <main>
-        <section>
+        <section id="record">
+            <header>
+                <h1>Registro</h1>
+                <p>Se atualizar perde os registros</p>
+            </header>
+        
             <form id="addreg">
                 <label for="name">Nome:</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
                 <br />
                 <label for="date">Data:</label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                 <br />
                 <label for="price">Preço:</label>
-                <input type="number" name="price" id="price">
+                <input type="number" name="price" id="price" min=1 required>
                 <br />
+        
                 <input type="button" value="Registrar">
             </form>
-
-            <div id="result">
-                <select name="who" id="who">
-                    <option value="all" checked>Todos</option>
-                </select>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Data</th>
-                            <th>Preço</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Quantidade</th>
-                            <th></th>
-                            <th></th>
-                            <th>Total</th>
-                        </tr>
-                        <tr>
-                            <td id="amount"></td>
-                            <td></td>
-                            <td></td>
-                            <td id="total"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
         </section>
 
-        <div id="changeregister">
-            <button onclick="closeRecordChange()"><ion-icon name="close"></ion-icon></button>
+        <section id="result">
+            <select name="who" id="who">
+                <option value="all" checked>Todos</option>
+            </select>
 
-            <section>
-                <h1>Antigo nome</h1>
-                <p>Antigas informações</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th>Preço</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-                <form>
-                    <label for="newprice">Novo preço:</label>
-                    <input type="number" id="newprice">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
 
-                    <label for="newdate">Nova data:</label>
-                    <input type="date" name="newdate" id="newdate">
-
-                    <input type="button" value="Alterar" id="change" onclick="updateRecords()">
-                </form>
-
-            </section>
-
-        </div>
+                <tfoot>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th></th>
+                        <th></th>
+                        <th>Total</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td id="amount"></td>
+                        <td></td>
+                        <td></td>
+                        <td id="total"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
     </main>
+
+    <section id="changeregister">
+        <button onclick="closeRecordChange()"><ion-icon name="close"></ion-icon></button>
+
+        <div>
+            <h1>Antigo nome</h1>
+            <p>Antigas informações</p>
+
+            <form>
+                <label for="newprice">Novo preço:</label>
+                <input type="number" id="newprice">
+                <br/>
+                <label for="newdate">Nova data:</label>
+                <input type="date" name="newdate" id="newdate">
+                <br />
+                <input type="button" value="Alterar" id="change" onclick="updateRecords()">
+            </form>
+        </div>
+    </section>
 
     <footer>
         <p>Daniel Rodrigues</p>
     </footer>
+
+    <!--Configurando data-->
+    <script>
+        let date = new Date();
+        let day = 0+date.getDate().toString()
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        element_date = document.querySelector('input[type=date]')
+        element_date.value = `${year}-${month}-${day}`
+        element_date.min = `${year}-01-01`
+        element_date.max = `${year}-${month}-${day}`
+    </script>
 
     <!--Meus scrips respónsaveis pelas operações CRUD-->
     <script src="scripts/addregister.js"></script>
