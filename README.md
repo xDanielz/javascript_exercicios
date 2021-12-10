@@ -1,2 +1,2 @@
 # javascript_exercicios
-Exercícios básicos de Java script
+Exercícios básicos de Java script.

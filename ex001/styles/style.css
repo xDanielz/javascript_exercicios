@@ -21,8 +21,10 @@ header p{
 }
 
 main{
+    display: flex;
+    flex-direction: column;
     max-width: 800px;
-    margin: 20px auto 0 auto;
+    margin: auto;
     background-color: white;
     padding: 20px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.459);
@@ -54,19 +56,28 @@ form#addreg input[value='Registrar']{
     padding: 0;
     margin: 0;
     width: 5em;
+    height: 2.5em;
+    font-size: 1.1em;
     float: right;
     border-radius: 5px;
+    margin-bottom: 25px;
     
 }
 
-#result{
-    margin-top: 170px;
+section#result{
+    margin-top: 25px;
+}
+
+section#result h1{
+    text-align: center;
+    font-size: 2em;
 }
 
 select#who{
-    width: 100px;
-    height: 20px;
-    font-size: 16px;
+    width: 4.5em;
+    height: 1.5em;
+    font-size: 1.3em;
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -85,12 +96,17 @@ tr{
 }
 
 td{
-    width: 5%;
+    text-align: left;
     padding: 5px;
+}
+
+.tdprice, td#total{
+    text-align: right;
 }
 
 .delbutton, .updbutton{
     padding-top: 10px;
+    text-align: center;
 }
 
 .updbutton:hover{

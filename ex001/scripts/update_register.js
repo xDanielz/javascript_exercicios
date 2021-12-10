@@ -19,7 +19,11 @@ function recordChange(){
     }
     for(e of [element_upd, element_del]){
         for(btn of e){
-            btn.innerText = '';
+            if(btn.className == 'updbutton'){
+                btn.removeEventListener('click', recordChange);
+                continue;
+            }
+            btn.removeEventListener('click', delregister);
         }
     }
 
@@ -49,13 +53,14 @@ function closeRecordChange(){
             obj.removeAttribute('disabled');
         }
     }
-    let contenthtml = ['<ion-icon name="settings-outline"></ion-icon>', '<ion-icon name="close-outline"></ion-icon>']
-    let c = 0;
     for(e of [element_upd, element_del]){
         for(btn of e){
-            btn.innerHTML = contenthtml[c];
+            if(btn.className == 'updbutton'){
+                btn.addEventListener('click', recordChange);
+                continue;
+            }
+            btn.addEventListener('click', delregister);
         }
-        c = (c + 1) % 2;
     }
 
 }

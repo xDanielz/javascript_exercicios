@@ -34,12 +34,15 @@ function viewrecords(){
 
             tr = document.createElement('tr');
 
-            for(c of contents){
+            for(c in contents){
                 let td = document.createElement('td');
-                td.innerText = c;
+                td.innerText = contents[c];
+                if(c == 3){
+                    td.className = 'tdprice';
+                    td.innerText = Number(contents[c]).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+                }
                 tr.appendChild(td);
             }
-
             addbuttons(tr);//Adiciona os botões de deletar e alterar ao elemento tr;
 
             tbody_element.appendChild(tr);
@@ -64,6 +67,6 @@ function viewrecords(){
         }
     }
 
-    total_element.innerText = total;
+    total_element.innerText = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
     amount_element.innerText = amount;
 }
