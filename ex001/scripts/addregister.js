@@ -34,10 +34,8 @@ function addregister(){
 
     viewrecords();
 
-    for(id of ['price', 'name']){
-        let element = eval(`element_${id}`)
-        element.value = '';
-    }
+    element_price.value = '';
+    element_name.value = '';
 
     element_name.focus();
 }

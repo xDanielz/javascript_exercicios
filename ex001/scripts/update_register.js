@@ -1,9 +1,12 @@
 //Novos Dados
 const new_price = document.getElementById('newprice');
 const new_date = document.getElementById('newdate');
-
 //Inputs do formulário de adição de registros
 const element_input = document.getElementById('addreg');
+//Elementos <td> delbutton e updbutton
+const element_upd = document.getElementsByClassName('updbutton');
+const element_del = document.getElementsByClassName('delbutton');
+
 
 function recordChange(){
     document.getElementById('changeregister').style.display = 'block';
@@ -14,7 +17,11 @@ function recordChange(){
             i.setAttribute('disabled', 'disabled');
         }
     }
-
+    for(e of [element_upd, element_del]){
+        for(btn of e){
+            btn.style.display = 'none';
+        }
+    }
 
     //Identificadores
     const regid = this.parentElement.children[0].innerText;
@@ -40,6 +47,11 @@ function closeRecordChange(){
     for(i of element_input.children){
         if(i == '[object HTMLInputElement]'){
             i.removeAttribute('disabled');
+        }
+    }
+    for(e of [element_upd, element_del]){
+        for(btn of e){
+            btn.style.display = 'table-cell';
         }
     }
 
