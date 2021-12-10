@@ -19,7 +19,7 @@ function recordChange(){
     }
     for(e of [element_upd, element_del]){
         for(btn of e){
-            btn.style.display = 'none';
+            btn.innerText = '';
         }
     }
 
@@ -44,15 +44,18 @@ function closeRecordChange(){
     new_date.value = '';
 
     //Habilitando inputs
-    for(i of element_input.children){
-        if(i == '[object HTMLInputElement]'){
-            i.removeAttribute('disabled');
+    for(obj of element_input.children){
+        if(obj == '[object HTMLInputElement]'){
+            obj.removeAttribute('disabled');
         }
     }
+    let contenthtml = ['<ion-icon name="settings-outline"></ion-icon>', '<ion-icon name="close-outline"></ion-icon>']
+    let c = 0;
     for(e of [element_upd, element_del]){
         for(btn of e){
-            btn.style.display = 'table-cell';
+            btn.innerHTML = contenthtml[c];
         }
+        c = (c + 1) % 2;
     }
 
 }
