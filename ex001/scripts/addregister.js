@@ -5,6 +5,7 @@ const element_price = document.getElementById('price');
 registerbtn.addEventListener('click', addregister);
 
 var allrecords = {};
+var allids = {};
 
 function addregister(){
     let proceed = true;
@@ -21,15 +22,19 @@ function addregister(){
     if(!proceed || element_price.value < 1){return;}
 
     let name = element_name.value.toUpperCase();
+
     let register = {
+        id: 0,
         date: element_date.value,
         price: element_price.value
     }
 
     if (!(name in allrecords)){
         allrecords[name] = [];
+        allids[name] = 0;
     }
-
+    allids[name]++;
+    register.id = allids[name];
     allrecords[name].push(register);
 
     viewrecords();

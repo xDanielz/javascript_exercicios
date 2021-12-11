@@ -20,8 +20,6 @@ function viewrecords(){
     //Adiciona os elementos <tr> e <td> a tabela
     for(n in allrecords){
 
-        let n_id = 1;//Contador do id respectivo ao usuário único
-        
         if(chosen != 'all' && chosen != n){continue;}
 
         //Conteúdos respectivo ao registro que irão preencher o elementos td
@@ -36,7 +34,7 @@ function viewrecords(){
 
             //Lista com os dados a serem adicionados nas td
             let contents = [
-                n_id, 
+                allrecords[n][i].id, 
                 n, 
                 date,
                 price
@@ -55,9 +53,6 @@ function viewrecords(){
             addbuttons(tr);//Adiciona os botões de deletar e alterar ao elemento tr;
 
             tbody_element.appendChild(tr);
-
-
-            n_id++;
         }
     }
 
