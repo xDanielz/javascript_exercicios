@@ -14,6 +14,7 @@ function addregister(){
     for(id of ['price', 'name', 'date']){
         let element = eval(`element_${id}`)
         if(!element.value){
+            alert('Preencha os campos')
             proceed = false;
             break;
         }
@@ -28,17 +29,19 @@ function addregister(){
         date: element_date.value,
         price: element_price.value
     }
-
+    //Se não há um atributo com o nome adicione-o e inicie o contador de ID
     if (!(name in allrecords)){
         allrecords[name] = [];
         allids[name] = 0;
     }
+    
     allids[name]++;
-    register.id = allids[name];
+    register.id = allids[name];//Adicionado id ao objeto registro
     allrecords[name].push(register);
 
-    viewrecords();
+    viewrecords();//Atualizando exibição de registros
 
+    //Limpando campos
     element_price.value = '';
     element_name.value = '';
 
