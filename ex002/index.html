@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main>
+        <header>
+            <h1>Jogo da velha</h1>
+        </header>
+
+        <section id="choose_simbol">
+            <label for="x">
+                <input type="radio" name="simbol" id="x" value="x" checked>
+                <span>
+                    <ion-icon name="close" size="large"></ion-icon>
+                    <ion-icon name="remove"></ion-icon>
+                </span>
+            </label>
+
+            <label for="o">
+                <input type="radio" name="simbol" id="o" value="o">
+                <span>
+                    <ion-icon name="radio-button-off" size="large"></ion-icon>
+                    <ion-icon name="remove"></ion-icon>
+                </span>
+            </label>
+        </section>
+    </main>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
