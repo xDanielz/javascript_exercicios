@@ -26,6 +26,7 @@ main{
 header{
     font-family: var(--font-header);
     font-size: 1.5em;
+    text-shadow: 1px 1px 2px cyan;
 }
 
 section#choose_simbol{
@@ -72,13 +73,80 @@ span{
     grid-template-columns: auto auto auto;
     justify-content: center;
     margin: 45px auto;
+    background-color: cyan;
 }
 
 .house {
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: cyan;
+    border: 5px solid rgb(133, 133, 133);
     text-align: center;
     min-width: 90px;
     width: 10vw;
     height: 15vh;
+}
+
+.rmvborder, #b2{
+    border: 0;
+}
+
+#a2{
+    position: relative;
+    top: 5px;
+    border-top: 0;
+}
+
+#b3{
+    position: relative;
+    right: 5px;
+    border-right: 0;
+}
+
+#c2{
+    position: relative;
+    bottom: 5px;
+    border-bottom: 0;
+}
+
+#b1{
+    position: relative;
+    left: 5px;
+    border-left: 0;
+}
+
+button{
+    width: 8em;
+    height: 45px;
+    border: 0 solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: cyan;
+    color: rgb(255, 255, 255);
+    text-shadow: 1.5px 1px 0 rgba(0, 0, 0, 0.479);
+    box-shadow: 1.5px 1px 0 1px rgba(0, 0, 0, 0.479);
+    margin-bottom: 15px;
+}
+
+button:active{
+    box-shadow: 1.5px 1px 0px 1px rgba(0, 0, 0, 0.479) inset;
+    text-shadow: -1.5px -1px 0 rgba(0, 0, 0, 0.479);
+}
+
+footer{
+    padding: 10px;
+    width: 100vw;
+    margin: 25px auto 0 auto;
+    font-size: 1.50em;
+    background-color: white;
+}
+
+footer a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+}
+
+footer a:hover{
+    text-decoration: underline cyan;
 }
