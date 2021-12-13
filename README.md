@@ -1,2 +1,2 @@
 # javascript_exercicios
-Exercícios básicos de Java script.
+Exercícios para praticar HTML5, CSS3 e JavaScript.
