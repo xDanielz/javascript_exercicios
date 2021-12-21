@@ -10,12 +10,12 @@
 <body>
     <main>
         <header>
-            <h1>Jogo da velha</h1>
+            <h1>JOGO DA VELHA</h1>
         </header>
 
         <section id="choose_simbol">
             <label for="x">
-                <input type="radio" name="simbol" id="x" value="x" checked>
+                <input type="radio" name="simbol" id="x" checked>
                 <span>
                     <ion-icon name="close" size="large"></ion-icon>
                     <ion-icon name="remove"></ion-icon>
@@ -23,7 +23,7 @@
             </label>
 
             <label for="o">
-                <input type="radio" name="simbol" id="o" value="o">
+                <input type="radio" name="simbol" id="o" >
                 <span>
                     <ion-icon name="radio-button-off" size="large"></ion-icon>
                     <ion-icon name="remove"></ion-icon>
@@ -43,12 +43,17 @@
             <div class="house rmvborder" id="c3"></div>
         </section>
 
-        <button>Reiniciar</button>
+        <button id="restart">Reiniciar</button>
     </main>
 
     <footer>
         <p><a href="https://github.com/xDanielz" target="_blanc">Daniel Rodrigues</a></p>
     </footer>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!--Scripts-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script><!--Simbolos dos butões radio-->
+
+    <!--Jogo da velha-->
+    <script src="scripts/tictactoe.js"></script>
 </body>
 </html>

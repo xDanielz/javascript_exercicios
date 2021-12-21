@@ -16,7 +16,7 @@ body{
 }
 
 main{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     max-width: 800px;
     margin: auto;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.479);
@@ -27,6 +27,7 @@ header{
     font-family: var(--font-header);
     font-size: 1.5em;
     text-shadow: 1px 1px 2px cyan;
+    color: rgb(75, 75, 75);
 }
 
 section#choose_simbol{
@@ -83,6 +84,7 @@ span{
     min-width: 90px;
     width: 10vw;
     height: 15vh;
+    position: relative;
 }
 
 .rmvborder, #b2{
@@ -90,27 +92,34 @@ span{
 }
 
 #a2{
-    position: relative;
     top: 5px;
     border-top: 0;
+    z-index: 1;
 }
 
 #b3{
-    position: relative;
-    right: 5px;
+    right: 4px;
     border-right: 0;
 }
 
 #c2{
-    position: relative;
     bottom: 5px;
     border-bottom: 0;
 }
 
 #b1{
-    position: relative;
+    z-index: 1;
     left: 5px;
     border-left: 0;
+}
+
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65px;
+    height: 65px;
 }
 
 button{
