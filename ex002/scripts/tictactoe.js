@@ -1,10 +1,12 @@
-const board_element = document.getElementsByClassName('house');
+const central_area = document.getElementById('letsplayagame');
+const HtmlCentralArea = central_area.innerHTML;
+const house_element = document.getElementsByClassName('house');
 const restart_button = document.getElementById('restart');
 const radio_element = document.querySelectorAll('input[type=radio]');
 
 restart_button.addEventListener('click', reset);
 
-for(let e of board_element){
+for(let e of house_element){
     e.addEventListener('click', mark);
 }
 
@@ -105,12 +107,18 @@ const gamestate = {
 function mark(){
     gamestate.gamestart();
     gamestate.newMove(this);
+
     let result = gamestate.result();
     if(result != -2){
+        const element_result = document.createElement('div');
+        element_result.id = 'viewresult';
+        central_area.innerHTML = '';
+        central_area.appendChild(element_result);
+
         if(result == -1){
             alert('Draw');
         }else{
-            alert(`O jogador ${gamestate.symbols[result]} Venceu`)
+            element_result.innerHTML = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
             gamestate.increaseScore(result);
         }
     }
@@ -129,7 +137,9 @@ function reset(){
 
     radio_element[Number(!Boolean(gamestate.turn))].removeAttribute('disabled');
 
-    for(h of board_element){
+    central_area.innerHTML = HtmlCentralArea;
+
+    for(h of house_element){
         h.innerHTML = '';
         h.addEventListener('click', mark);
     }

@@ -2,6 +2,7 @@
 
 :root{
     --font-header: 'Bakbak One', cursive;
+    --font-result: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 *{
@@ -120,6 +121,16 @@ img{
     transform: translate(-50%, -50%);
     width: 65px;
     height: 65px;
+}
+
+div#viewresult{
+    font: normal normal bold 3em var(--font-result);
+    color: white; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.466);
+    height: 45vh;
+    min-width: 50vw;
+    padding-top: 50px;
+    
 }
 
 button{
