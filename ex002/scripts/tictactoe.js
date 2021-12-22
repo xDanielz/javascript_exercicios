@@ -37,10 +37,10 @@ const gamestate = {
     },
 
     newMove: function(house){
-        let simbol = this.symbols[this.turn];
-        house.innerHTML = simbol;
+        let symbol = this.symbols[this.turn];
+        house.innerHTML = `<img src="images/${symbol}.png"></img>`;
         let id = house.id;
-        this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = simbol;
+        this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = symbol;
         house.removeEventListener('click', mark);
         radio_element[Number(!Boolean(this.turn))].checked = 'checked';
     },
@@ -115,12 +115,14 @@ function mark(){
         central_area.innerHTML = '';
         central_area.appendChild(element_result);
 
+        let txt = '';
         if(result == -1){
-            alert('Draw');
+            txt = 'EMPATE';
         }else{
-            element_result.innerHTML = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
+            txt = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
             gamestate.increaseScore(result);
         }
+        element_result.innerHTML = txt;
     }
     gamestate.nextRound();
 }
