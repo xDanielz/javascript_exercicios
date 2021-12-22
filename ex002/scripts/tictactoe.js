@@ -1,11 +1,19 @@
 const board_element = document.getElementsByClassName('house');
-//const restart_button = document.getElementById('restart');
+const restart_button = document.getElementById('restart');
 const radio_element = document.querySelectorAll('input[type=radio]');
+
+restart_button.addEventListener('click', reset);
+
+for(let e of board_element){
+    e.addEventListener('click', mark);
+}
+
 
 const gamestate = {
     round: 0,
     turn: 0,
-    simbols: ['X', 'O'],
+    symbols: ['X', 'O'],
+    scores: [0, 0],
     players: [
              [[],[],[]], 
              [[],[],[]]
@@ -22,29 +30,38 @@ const gamestate = {
     },
 
     nextRound: function(){
-        this.round = (this.round + 1) % 9;
+        this.round = (this.round + 1) % 11;
         this.turn = (this.turn + 1) % 2;
     },
 
     newMove: function(house){
-        let simbol = this.simbols[this.turn];
+        let simbol = this.symbols[this.turn];
         house.innerHTML = simbol;
         let id = house.id;
         this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = simbol;
         house.removeEventListener('click', mark);
+        radio_element[Number(!Boolean(this.turn))].checked = 'checked';
     },
 
-    result: function(){//Funcão respónsavel por determinar se houve vitória.
+    increaseScore: function(player){
+        this.scores[player]++;
+        const elements_score = document.getElementsByClassName('score');
+        const player_element_score = elements_score[player];
+        const playerscore = this.scores[player];
+        player_element_score.innerHTML = `<strong>${playerscore}</strong>`;
+    },
+
+    result: function(){//Função respónsavel por determinar se houve vitória.
         let c = 0;
-        const completeline = ['X,X,X', 'O,O,O'][this.turn];
-        let playerboard = this.players[this.turn];
+        let currentplayer = this.turn;
+        const completeline = ['X,X,X', 'O,O,O'][currentplayer];
+        let playerboard = this.players[currentplayer];
     
         //Verificando horizontal e vertical.
         for(let row = 0; row < 3; row++){
-
             //Horizontal
             if(playerboard[row].toString() === completeline){
-                alert('venceu');
+                return currentplayer;
             }
 
             //Vertical
@@ -55,7 +72,7 @@ const gamestate = {
                 }
             }
             if(c === 3){
-                alert('venceu');
+                return currentplayer;
             }
         }
         
@@ -70,21 +87,50 @@ const gamestate = {
                 diagonals[1]++;
             }
             if(diagonals[0] === 3 || diagonals[1] === 3){
-                alert('venceu');
+                return currentplayer;
             }
             row--;
             col++;
         }
+        //alert(this.round);
+        if(this.round === 8){
+            return -1;
+        }
+
+        return -2;
     }
 }
 
-for(let e of board_element){
-    e.addEventListener('click', mark);
-}
 
 function mark(){
     gamestate.gamestart();
     gamestate.newMove(this);
-    gamestate.result();
+    let result = gamestate.result();
+    if(result != -2){
+        if(result == -1){
+            alert('Draw');
+        }else{
+            alert(`O jogador ${gamestate.symbols[result]} Venceu`)
+            gamestate.increaseScore(result);
+        }
+    }
     gamestate.nextRound();
+}
+
+function reset(){
+    gamestate.turn = 0;
+    gamestate.round = 0;
+    gamestate.players = [
+        [[],[],[]],
+        [[],[],[]],
+    ]
+
+    radio_element[0].checked = 'checked';
+
+    radio_element[Number(!Boolean(gamestate.turn))].removeAttribute('disabled');
+
+    for(h of board_element){
+        h.innerHTML = '';
+        h.addEventListener('click', mark);
+    }
 }
