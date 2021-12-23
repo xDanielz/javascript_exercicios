@@ -107,23 +107,7 @@ const gamestate = {
 function mark(){
     gamestate.gamestart();
     gamestate.newMove(this);
-
-    let result = gamestate.result();
-    if(result != -2){
-        const element_result = document.createElement('div');
-        element_result.id = 'viewresult';
-        central_area.innerHTML = '';
-        central_area.appendChild(element_result);
-
-        let txt = '';
-        if(result == -1){
-            txt = 'EMPATE';
-        }else{
-            txt = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
-            gamestate.increaseScore(result);
-        }
-        element_result.innerHTML = txt;
-    }
+    viewResult(gamestate.result());
     gamestate.nextRound();
 }
 
@@ -144,5 +128,32 @@ function reset(){
     for(h of house_element){
         h.innerHTML = '';
         h.addEventListener('click', mark);
+    }
+}
+
+function viewResult(result){
+    if(result != -2){
+        
+        const element_result = document.createElement('div');
+        element_result.id = 'viewresult';
+        central_area.innerHTML = '';
+        central_area.appendChild(element_result);
+
+        let txt = '';
+        if(result == -1){
+            txt = 'EMPATE';
+        }else{
+            txt = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
+            gamestate.increaseScore(result);
+        }
+        element_result.innerHTML = txt;
+    }
+}
+
+function syncDelay(milliseconds){
+    var start = new Date().getTime();
+    var end=0;
+    while( (end-start) < milliseconds){
+        end = new Date().getTime();
     }
 }
