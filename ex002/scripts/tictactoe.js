@@ -14,7 +14,7 @@ for(let e of house_element){
 const gamestate = {
     round: 0,
     turn: 0,
-    symbols: ['X', 'O'],
+    symbols: ['x', 'o'],
     scores: [0, 0],
     players: [
              [[],[],[]], 
@@ -56,7 +56,7 @@ const gamestate = {
     result: function(){//Função respónsavel por determinar se houve vitória.
         let c = 0;
         let currentplayer = this.turn;
-        const completeline = ['X,X,X', 'O,O,O'][currentplayer];
+        const completeline = ['x,x,x', 'o,o,o'][currentplayer];
         let playerboard = this.players[currentplayer];
     
         //Verificando horizontal e vertical.
