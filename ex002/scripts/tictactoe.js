@@ -38,7 +38,7 @@ const gamestate = {
 
     newMove: function(house){
         let symbol = this.symbols[this.turn];
-        house.innerHTML = `<img src="images/${symbol}.png"></img>`;
+        house.innerHTML = `<img src="images/${symbol}.png" alt="${symbol}"></img>`;
         let id = house.id;
         this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = symbol;
         house.removeEventListener('click', mark);
