@@ -38,9 +38,9 @@ const gamestate = {
 
     newMove: function(house){
         let symbol = this.symbols[this.turn];
-        house.innerHTML = `<img src="images/${symbol}.png" alt="${symbol}"></img>`;
+        house.innerHTML = `<img src="images/${symbol}.png" alt="${symbol}"></img>`;//Adicionando imagem no site
         let id = house.id;
-        this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = symbol;
+        this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = symbol;//Adicionando simbolo no array respectivo do jogador
         house.removeEventListener('click', mark);
         radio_element[Number(!Boolean(this.turn))].checked = 'checked';
     },
@@ -78,7 +78,7 @@ const gamestate = {
             }
         }
         
-        //Diagonal esquerda
+        //Diagonais
         let row = 2; let col = 0;
         let diagonals = [0, 0];
         for(let i = 0; i < 3; i++){
@@ -94,7 +94,8 @@ const gamestate = {
             row--;
             col++;
         }
-        //alert(this.round);
+
+        //Empate;
         if(this.round === 8){
             return -1;
         }
@@ -134,18 +135,25 @@ function reset(){
 function viewResult(result){
     if(result != -2){
         
-        const element_result = document.createElement('div');
-        element_result.id = 'viewresult';
-        central_area.innerHTML = '';
-        central_area.appendChild(element_result);
+        setTimeout(function(){
+            const element_result = document.createElement('div');
+            element_result.id = 'viewresult';
+            central_area.innerHTML = '';
+            central_area.appendChild(element_result);
+            let txt = '';
 
-        let txt = '';
-        if(result == -1){
-            txt = 'EMPATE';
-        }else{
-            txt = `<p>${gamestate.symbols[result]}<br />VENCEU!</p>`
-            gamestate.increaseScore(result);
-        }
-        element_result.innerHTML = txt;
+            if(result == -1){
+                txt = 'EMPATE';
+
+            }else{
+                let symbol = 'xo'[result];
+                txt = `<p>
+                            <img src="images/${symbol}.png" alt="${symbol}" id="imgresult"></img>
+                            <br />VENCEU!
+                       </p>`
+                gamestate.increaseScore(result);
+            }
+            element_result.innerHTML = txt;
+        }, 500);
     }
 }
