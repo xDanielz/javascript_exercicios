@@ -47,7 +47,8 @@ const gamestate = {
         radio_element[Number(!Boolean(this.turn))].checked = 'checked';
     },
 
-    increaseScore: function(player){
+    increaseScore: function(){
+        let player = Number(!Boolean(this.turn));
         this.scores[player]++;
         const elements_score = document.getElementsByClassName('score');
         const player_element_score = elements_score[player];
@@ -117,14 +118,6 @@ const gamestate = {
     }
 }
 
-
-function mark(){
-    gamestate.gamestart();
-    gamestate.newMove(this);
-    viewResult(gamestate.result());
-    gamestate.nextRound();
-}
-
 function reset(){
     gamestate.turn = 0;
     gamestate.round = 0;
@@ -145,18 +138,21 @@ function reset(){
     }
 }
 
-function viewResult(position){
+function viewResult(){
+    let position = gamestate.result();
+
     if(position != -2){
         let symbol = gamestate.symbol();
         let c = 0;
+
         for(let h of house_element){
             if(h.id === position[c]){
                 h.children[0].src = `images/${symbol}v.png`
                 c++;
             }
+            h.removeEventListener('click', mark);
         }
 
-        let result = gamestate.turn;
         setTimeout(function(){
             const element_result = document.createElement('div');
             element_result.id = 'viewresult';
@@ -164,7 +160,7 @@ function viewResult(position){
             central_area.appendChild(element_result);
             let txt = '';
 
-            if(result == -1){
+            if(position == -1){
                 txt = 'EMPATE';
 
             }else{
@@ -172,9 +168,16 @@ function viewResult(position){
                             <img src="images/${symbol}.png" alt="${symbol}" id="imgresult"></img>
                             <br />VENCEU!
                        </p>`
-                gamestate.increaseScore(result);
+                gamestate.increaseScore();
             }
             element_result.innerHTML = txt;
         }, 500);
     }
+}
+
+function mark(){
+    gamestate.gamestart();
+    gamestate.newMove(this);
+    viewResult();
+    gamestate.nextRound();
 }
