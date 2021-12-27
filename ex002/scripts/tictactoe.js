@@ -14,13 +14,15 @@ for(let e of house_element){
 const gamestate = {
     round: 0,
     turn: 0,
-    symbols: ['x', 'o'],
     scores: [0, 0],
     players: [
              [[],[],[]], 
              [[],[],[]]
             ],
 
+    symbol: function(){
+        return 'xo'[this.turn];
+    },
 
     gamestart: function(){
         if(!this.round){
@@ -37,7 +39,7 @@ const gamestate = {
     },
 
     newMove: function(house){
-        let symbol = this.symbols[this.turn];
+        let symbol = gamestate.symbol();
         house.innerHTML = `<img src="images/${symbol}.png" alt="${symbol}"></img>`;//Adicionando imagem no site
         let id = house.id;
         this.players[this.turn]['abc'.indexOf(id[0])][id[1]-1] = symbol;//Adicionando simbolo no array respectivo do jogador
@@ -56,14 +58,18 @@ const gamestate = {
     result: function(){//Função respónsavel por determinar se houve vitória.
         let c = 0;
         let currentplayer = this.turn;
+        let victorioushouses = [];
         const completeline = ['x,x,x', 'o,o,o'][currentplayer];
         let playerboard = this.players[currentplayer];
     
         //Verificando horizontal e vertical.
         for(let row = 0; row < 3; row++){
+            
             //Horizontal
             if(playerboard[row].toString() === completeline){
-                return currentplayer;
+                let letter = 'abc'[row];
+                victorioushouses = [`${letter}1`, `${letter}2`, `${letter}3`]
+                return victorioushouses;
             }
 
             //Vertical
@@ -72,9 +78,11 @@ const gamestate = {
                 if(playerboard[column][row] != undefined){
                     c++;
                 }
-            }
-            if(c === 3){
-                return currentplayer;
+                if(c === 3){
+                    let position = row+1
+                    victorioushouses = [`a${position}`,`b${position}`,`c${position}`]
+                    return victorioushouses;
+                }
             }
         }
         
@@ -89,7 +97,12 @@ const gamestate = {
                 diagonals[1]++;
             }
             if(diagonals[0] === 3 || diagonals[1] === 3){
-                return currentplayer;
+                if(diagonals[0] === 3){
+                    victorioushouses = ['a3', 'b2', 'c1'];
+                }else{
+                    victorioushouses = ['a1', 'b2', 'c3'];
+                }
+                return victorioushouses;
             }
             row--;
             col++;
@@ -132,9 +145,18 @@ function reset(){
     }
 }
 
-function viewResult(result){
-    if(result != -2){
-        
+function viewResult(position){
+    if(position != -2){
+        let symbol = gamestate.symbol();
+        let c = 0;
+        for(let h of house_element){
+            if(h.id === position[c]){
+                h.children[0].src = `images/${symbol}v.png`
+                c++;
+            }
+        }
+
+        let result = gamestate.turn;
         setTimeout(function(){
             const element_result = document.createElement('div');
             element_result.id = 'viewresult';
@@ -146,7 +168,6 @@ function viewResult(result){
                 txt = 'EMPATE';
 
             }else{
-                let symbol = 'xo'[result];
                 txt = `<p>
                             <img src="images/${symbol}.png" alt="${symbol}" id="imgresult"></img>
                             <br />VENCEU!
