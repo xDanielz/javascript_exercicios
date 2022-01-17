@@ -10,7 +10,6 @@ body{
 
 main{
     background-color: white;
-    height: 600px;
     max-width: 600px;
     margin: auto;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.438);
@@ -61,8 +60,13 @@ input[type="button"]{
 #result{
     display: none;
     text-align: left;
+    font-weight: normal;
 }
 
 #result > p{
     margin-bottom: 10px;
+}
+
+input[value='Limpar']{
+    display: none;
 }
