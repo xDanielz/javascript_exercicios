@@ -17,6 +17,9 @@
             <label for="km">Distância em Km</label>
             <input type="number" name="km" id="km">
             <br />
+            <label for="km">Consumo do Véiculo</label>
+            <input type="number" name="average" id="average">
+            <br />
             <label for="diesel">Preço do diesel</label>
             <input type="number" name="fuel" id="fuel">
             <br />
@@ -25,6 +28,11 @@
         </section>
 
         <input type="button" value="Calcular">
+
+        <section id="result">
+            <p>Gasto em combústivel: <span id="fuelcost"></span></p>
+            <p>Preço sugerido do frete: <span id="cost"></span></p> 
+        </section>
     </main>
 
     <script src="script.js"></script>

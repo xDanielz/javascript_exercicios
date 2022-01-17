@@ -57,3 +57,12 @@ input[type="button"]{
     width: 100px;
     left: 416px; 
 }
+
+#result{
+    display: none;
+    text-align: left;
+}
+
+#result > p{
+    margin-bottom: 10px;
+}
