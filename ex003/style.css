@@ -17,7 +17,7 @@ main{
 }
 
 header{
-    font: normal small-caps bold 3em Arial, Helvetica, sans-serif;
+    font: normal small-caps bold 1.5em Arial, Helvetica, sans-serif;
     text-align: center;
     padding-top: 10px;
     color: rgb(0, 196, 196);
@@ -49,22 +49,25 @@ input{
 }
 
 input[type="button"]{
-    position: relative;
     font-size: 1em;
-    margin-top: 10px;
+    margin: 10px;
     padding: 5px;
     width: 100px;
-    left: 416px; 
+    display: block;
+    margin: 15px auto;
 }
 
 #result{
     display: none;
     text-align: left;
     font-weight: normal;
+    margin: auto;
 }
 
-#result > p{
-    margin-bottom: 10px;
+p{
+    padding: 10px;
+    text-align: right;
+    width: 300px;
 }
 
 input[value='Limpar']{
