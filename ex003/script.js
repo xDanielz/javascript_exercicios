@@ -1,10 +1,10 @@
 const element_km = document.getElementById('km');
 const element_fuel = document.getElementById('fuel');
 const element_price = document.getElementById('price');
+const element_result = document.getElementById('result');
 const element_average = document.getElementById('average');
 const element_btn = document.querySelector('input[type=button]');
 const element_clean = document.querySelector('input[value=Limpar]');
-const element_result = document.getElementById('result');
 const input_elements = document.querySelectorAll('input[type=number');
 
 element_btn.addEventListener('click', () => {

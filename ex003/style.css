@@ -9,18 +9,21 @@ body{
 }
 
 main{
-    background-color: white;
-    max-width: 600px;
+    background-image: url('imagen/estrada.jpg');
+    background-position: center;
+    background-size: 800px;
+    max-width: 800px;
     margin: auto;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.438);
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 header{
     font: normal small-caps bold 1.5em Arial, Helvetica, sans-serif;
     text-align: center;
     padding-top: 10px;
-    color: rgb(0, 196, 196);
+    background-image: linear-gradient(black, lightblue);
+    color: lightcyan;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.349);
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.473);
 }
@@ -28,10 +31,12 @@ header{
 section{
     padding: 10px;
     font: normal bold 1.2em Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.801);
     border: 1px solid rgba(0, 0, 0, 0.397);
     max-width: 450px;
     margin: 50px auto 0 auto;
     text-align: center;
+    text-shadow: 1px 1px 1px black;
 }
 
 label{
