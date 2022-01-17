@@ -22,10 +22,6 @@ element_btn.addEventListener('click', () => {
         return;
     }
     
-    for(let e of input_elements){
-        e.setAttribute('disabled', 'disabled');
-    }
-
     element_clean.style.display = 'block';
     document.getElementById('result').style.display = 'block';
 
@@ -39,7 +35,6 @@ element_clean.addEventListener('click', () =>{
 
     for(let e of input_elements){
         e.value = '';
-        e.removeAttribute('disabled');
     }
 
     element_clean.style.display = 'none';
