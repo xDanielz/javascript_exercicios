@@ -23,6 +23,7 @@ header{
     padding-top: 10px;
     color: rgb(0, 196, 196);
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.349);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.473);
 }
 
 section{
@@ -46,4 +47,13 @@ label::after{
 
 input{
     height: 2.5em;
+}
+
+input[type="button"]{
+    position: relative;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100px;
+    left: 416px; 
 }
