@@ -66,8 +66,11 @@ input[type="button"]{
 
 p{
     padding: 10px;
+}
+
+span{
+    display: block;
     text-align: right;
-    width: 300px;
 }
 
 input[value='Limpar']{
