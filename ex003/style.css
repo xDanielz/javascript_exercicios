@@ -9,6 +9,7 @@ body{
 }
 
 main{
+    background-image: url('imagem/road.jpg');
     max-width: 800px;
     height: 1000px;
     background-position: center;
