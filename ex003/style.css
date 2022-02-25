@@ -66,6 +66,7 @@ input[type="button"]{
     text-align: left;
     font-weight: normal;
     margin: auto;
+    font-size: 2em;
 }
 
 p{
