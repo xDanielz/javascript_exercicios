@@ -35,7 +35,7 @@ element_btn.addEventListener('click', () => {
 
     element_fuelcost.innerHTML = `<strong>${fuel}</strong>`;
     element_cost.innerHTML = `<strong>${cost}</strong>`;
-    element_total.innerHTML = `pato`;
+    element_total.innerHTML = `<strong>${total}</strong>`;
 });
 
 element_clean.addEventListener('click', () =>{
