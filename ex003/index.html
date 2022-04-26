@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para frete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Auxiliar para cálculo de frete</h1>
+    </header>
+
+    <main style="background-image: url('imagem/road.jpg')">
+        <section>
+            <label for="km">Distância em Km (Somente ida)</label>
+            <input type="number" name="km" id="km">
+            <br />
+            <label for="km">Consumo do Véiculo</label>
+            <input type="number" name="average" id="average">
+            <br />
+            <label for="diesel">Preço do diesel</label>
+            <input type="number" name="fuel" id="fuel">
+            <br />
+            <label for="price">Valor cobrado por Km</label>
+            <input type="number" name="price" id="price">
+        </section>
+
+        <input type="button" value="Calcular">
+
+        <section id="result">
+            <p>Preço sugerido do frete:</p><span id="cost"></span>
+            <p>Gasto em combústivel:</p><span id="fuelcost"></span>
+            <p>Sobra:</p><span id="total"></span>
+        </section>
+
+        <input type="button" value="Limpar">
+    </main>
+
+    <footer>
+        <p><a href="https://github.com/xDanielz">Daniel Rodrigues</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

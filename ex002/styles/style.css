@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+
+:root{
+    --font-header: 'Bakbak One', cursive;
+    --font-result: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+}
+
+main{
+    background-color: rgb(255, 255, 255);
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.479);
+    padding-bottom: 10px;
+}
+
+header{
+    font-family: var(--font-header);
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px cyan;
+    color: rgb(75, 75, 75);
+}
+
+section#choose_simbol{
+    margin-top: 50px;
+}
+
+input[name='simbol']{
+    appearance: none;
+}
+
+input[name='simbol']:checked ~ span{
+    box-shadow: 0px 2.5px 0px 0px cyan;
+    background-color: rgb(104, 104, 104);
+    color: white;
+}
+
+label{
+    position: relative;
+    text-align: left;
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    margin: 5px;
+}
+
+span.score{
+    float: right;
+    margin: 10px;
+}
+
+span.radioxo{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    padding: 5px;
+    border: 1px solid rgb(133, 133, 133);
+    border-bottom: 0;
+    border-radius: 5px;
+}
+
+#letsplayagame{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    margin: 45px auto;
+    background-color: cyan;
+}
+
+.house {
+    background-color: cyan;
+    border: 5px solid rgb(133, 133, 133);
+    text-align: center;
+    min-width: 90px;
+    width: 10vw;
+    height: 15vh;
+    position: relative;
+}
+
+.rmvborder, #b2{
+    border: 0;
+}
+
+#a2{
+    top: 5px;
+    border-top: 0;
+    z-index: 1;
+}
+
+#b3{
+    right: 4px;
+    border-right: 0;
+}
+
+#c2{
+    bottom: 5px;
+    border-bottom: 0;
+}
+
+#b1{
+    z-index: 1;
+    left: 5px;
+    border-left: 0;
+}
+
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65px;
+    height: 65px;
+}
+
+img#imgresult{
+    top: 20%;
+}
+
+div#viewresult{
+    position: relative;
+    font: normal normal bold 3em var(--font-result);
+    color: white; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.466);
+    height: 45vh;
+    min-width: 50vw;
+    padding-top: 50px;
+    
+}
+
+button{
+    width: 8em;
+    height: 45px;
+    border: 0 solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: cyan;
+    color: rgb(255, 255, 255);
+    text-shadow: 1.5px 1px 0 rgba(0, 0, 0, 0.479);
+    box-shadow: 1.5px 1px 0 1px rgba(0, 0, 0, 0.479);
+    margin-bottom: 15px;
+}
+
+button:active{
+    box-shadow: 1.5px 1px 0px 1px rgba(0, 0, 0, 0.479) inset;
+    text-shadow: -1.5px -1px 0 rgba(0, 0, 0, 0.479);
+}
+
+footer{
+    padding: 10px;
+    width: 100vw;
+    margin: 25px auto 0 auto;
+    font-size: 1.50em;
+    background-color: white;
+}
+
+footer a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+}
+
+footer a:hover{
+    text-decoration: underline cyan;
+}

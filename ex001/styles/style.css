@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(226, 226, 226);
+}
+
+header{
+    text-align: center;
+    padding: 10px;
+    font-size: 2em;
+}
+
+header p{
+    padding-top: 15px;
+    font-size: 0.7em;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.459);
+}
+
+form#addreg {
+    font-size: 17px;
+    padding: 10px;
+    height: 160px;
+}
+
+form#addreg label{
+    display: inline-block;
+    font-size: 1.2em;
+    width: 55px;
+}
+
+form#addreg input{
+    margin: 10px 0 25px 0;
+    height: 25px;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 5px 0 5px 10px;
+    width: 100%;
+    font-size: 1em;
+}
+
+form#addreg input[value='Registrar']{
+    padding: 0;
+    margin: 0;
+    width: 5em;
+    height: 2.5em;
+    font-size: 1.1em;
+    float: right;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    
+}
+
+section#result{
+    margin-top: 25px;
+}
+
+section#result h1{
+    text-align: center;
+    font-size: 2em;
+}
+
+select#who{
+    width: 4.5em;
+    height: 1.5em;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+section#result div{
+    overflow: auto;
+    max-height: 200px;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+}
+
+tr{
+    background-color: rgba(224, 224, 224, 0.575);
+}
+
+td{
+    text-align: left;
+    padding: 5px;
+}
+
+.tdprice, td#total{
+    text-align: right;
+}
+
+.delbutton, .updbutton{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.updbutton:hover{
+    color: blue;
+    border: 1px solid;
+}
+
+.delbutton:hover{
+    color: red;
+    border: 1px solid;
+}
+
+#changeregister{
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 10px;
+    display: none;
+}
+
+#changeregister button{
+    max-width: 35px;
+    height: 25px;
+    padding: 3px;
+}
+
+#changeregister button:hover{
+    color: red;
+}
+
+#changeregister h1{
+    text-align: center;
+    margin: -15px auto 10px auto;
+}
+
+#changeregister p{
+    margin-bottom: 10px;
+}
+
+#changeregister label{
+    display: inline-block;
+    width: 95px;
+}
+
+#changeregister input{
+    margin-bottom: 10px;
+    max-width: 10em;
+    
+}
+
+#changeregister input[value='Alterar']{
+    margin-top: 10px;
+    font-size: 16px;
+    float: right;
+    width: 5em;
+    height: 2em;
+}
+
+#changeregister input[value='Alterar']:hover{
+    color: green;
+}
+
+footer{
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px;
+    font-style: italic;
+}
+
+footer a{
+    color: black;
+    text-decoration: none;
+}
+
+footer a:visited{
+    color: black;
+}
