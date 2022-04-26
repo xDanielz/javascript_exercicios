@@ -93,6 +93,10 @@ a{
     color: black;
 }
 
+a#outros{
+    font-size: 14px;
+}
+
 a:hover{
     text-decoration: underline;
 }

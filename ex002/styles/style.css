@@ -172,6 +172,10 @@ footer a{
     font-style: italic;
 }
 
+a#outros{
+    font-size: 14px;
+}
+
 footer a:hover{
     text-decoration: underline cyan;
 }

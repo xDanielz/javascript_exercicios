@@ -186,6 +186,10 @@ footer a{
     text-decoration: none;
 }
 
+a#outros{
+    font-size: 14px;
+}
+
 footer a:visited{
     color: black;
 }
