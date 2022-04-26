@@ -27,15 +27,15 @@ element_btn.addEventListener('click', () => {
     element_clean.style.display = 'block';
     document.getElementById('result').style.display = 'block';
 
-    let fuel = km * 2/average * fuelprice
-    let cost = km*2*price
+    let fuel = km * 2 / average * fuelprice;;
+    let cost = km * 2 * price;
     let total = (cost - fuel).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}); 
     fuel = fuel.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
     cost = cost.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
 
     element_fuelcost.innerHTML = `<strong>${fuel}</strong>`;
     element_cost.innerHTML = `<strong>${cost}</strong>`;
-    element_total.innerHTML = `<strong>${total}</strong>`;
+    element_total.innerHTML = `pato`;
 });
 
 element_clean.addEventListener('click', () =>{
