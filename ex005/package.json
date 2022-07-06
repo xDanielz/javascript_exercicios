@@ -1,0 +1,14 @@
+{
+  "name": "imc",
+  "version": "1.0.0",
+  "description": "calcula imc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "imc"
+  ],
+  "author": "Daniel Rodrigues",
+  "license": "MIT"
+}

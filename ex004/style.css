@@ -1,0 +1,23 @@
+body
+{
+    text-align: center;
+}
+form
+{
+    padding: 15px;
+}
+label
+{
+   text-align: left;
+   display: inline-block;
+   width: 70px;
+   font-size: 1.5em;
+}
+input
+{
+    margin-top: 5px;
+}
+input[type="submit"]
+{
+    margin-top: 10px;
+}

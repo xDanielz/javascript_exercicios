@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(185, 185, 185);
+}
+main{
+    width: 600px;
+    height: 550px;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}
+div{
+    margin: auto;
+    width: 500px;
+    height: 250px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 30px;
+}
+label{
+    display: inline-block;
+    width: 65px;
+    text-align: left;
+}
+input{
+    margin: 10px;
+}
+input[type="button"]{
+    padding: 10px;
+}
+#imc,#veredito{
+    text-transform: uppercase;
+}

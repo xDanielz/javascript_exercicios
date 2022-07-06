@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" href="src/css/style.css">
+	  <title>Calculadora de IMC</title>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>IMC</h1>
+		</header>
+		<div>
+			<label for="peso">PESO:</label>
+			<input id="peso" type="number">
+             <br />
+			<label for="altura">ALTURA:</label>
+			<input id="altura" type="number">
+			<br />
+			<input type="button" value="CALCULAR">
+			<p id="result">
+				Baseado em seu PESO e ALTURA seu <strong>IMC</strong> é: <strong><span id="imc"></span></strong>
+		        <br />
+				Sua Condição é de: <strong><span id="veredito"></span></strong>
+			</p>
+		</div>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<td>Valor</td>
+						<td>Classificação</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+
+					</tr>
+					<tr>
+
+					</tr>
+					<tr>
+
+					</tr>
+					<tr>
+
+					</tr>
+					<tr>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+	<script src="main.js" type="module"></script>
+	<script src="src/scripts/obterPesoAltura.mjs" type="module"></script>
+	<script src="src/scripts/calcularImc.mjs" type="module"></script>
+	<script src="src/scripts/classificarImc.mjs" type="module"></script>
+	<script src="src/scripts/vereditoImc.mjs" type="module"></script>
+	<script src="src/scripts/exibirImc.mjs" type="module"></script>
+</body>
